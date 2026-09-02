@@ -25,11 +25,11 @@
     --radius: 14px;
     --max-w: 920px;
   }
- 
+
   * { margin:0; padding:0; box-sizing:border-box; }
- 
+
   html { scroll-behavior: smooth; }
- 
+
   body{
     background: var(--bg);
     color: var(--text);
@@ -37,17 +37,17 @@
     line-height: 1.65;
     -webkit-font-smoothing: antialiased;
   }
- 
+
   h1,h2,h3{ font-family:'Space Grotesk', sans-serif; color:#fff; letter-spacing: -0.01em; }
- 
+
   a { color: inherit; }
- 
+
   ::selection{ background: var(--primary); color:#101014; }
- 
+
   @media (prefers-reduced-motion: reduce){
     *{ animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
   }
- 
+
   /* ---------- Barra de utilidades ---------- */
   .util-bar{
     position: fixed; top: 0; left: 0; right: 0; z-index: 50;
@@ -70,7 +70,7 @@
   .lang-toggle button:focus-visible, a:focus-visible, .btn:focus-visible{
     outline: 2px solid var(--secondary); outline-offset: 2px;
   }
- 
+
   /* ---------- Hero ---------- */
   .hero{
     position: relative;
@@ -83,7 +83,7 @@
       radial-gradient(circle at 85% 75%, rgba(3,218,198,0.08), transparent 45%),
       var(--bg);
   }
- 
+
   .circuit-svg{
     position:absolute; inset:0; width:100%; height:100%;
     opacity: 0.55;
@@ -103,9 +103,9 @@
     to{ stroke-dashoffset: -480; }
   }
   .circuit-svg .node{ fill: var(--bg); stroke: var(--line); stroke-width: 2; }
- 
+
   .hero-inner{ position:relative; z-index:2; max-width: var(--max-w); margin: 0 auto; width:100%; }
- 
+
   .eyebrow-tag{
     display:inline-flex; align-items:center; gap:0.5rem;
     font-family:'JetBrains Mono', monospace; font-size:0.78rem; color: var(--secondary);
@@ -113,7 +113,7 @@
     padding: 0.3rem 0.85rem; margin-bottom: 1.75rem;
   }
   .eyebrow-tag::before{ content:''; width:6px; height:6px; border-radius:50%; background: var(--secondary); box-shadow: 0 0 8px var(--secondary); }
- 
+
   .hero h1{
     font-size: clamp(2.4rem, 6vw, 4.2rem);
     font-weight: 700; line-height: 1.05;
@@ -121,16 +121,16 @@
     max-width: 14ch;
   }
   .hero h1 .accent{ color: var(--primary); }
- 
+
   .hero .role{
     font-size: clamp(1.05rem, 2vw, 1.35rem);
     color: var(--text-muted);
     max-width: 46ch;
     margin-bottom: 2.2rem;
   }
- 
+
   .hero-actions{ display:flex; flex-wrap:wrap; gap: 0.9rem; }
- 
+
   .btn{
     display:inline-flex; align-items:center; gap:0.5rem;
     padding: 0.85rem 1.5rem; border-radius: 10px;
@@ -143,23 +143,23 @@
   .btn-primary:hover{ transform: translateY(-2px); box-shadow: 0 10px 24px rgba(187,134,252,0.28); }
   .btn-ghost{ border-color: var(--line); color: var(--text); background: rgba(255,255,255,0.02); }
   .btn-ghost:hover{ border-color: var(--secondary); color: var(--secondary); transform: translateY(-2px); }
- 
+
   /* ---------- Layout geral ---------- */
   .wrap{ max-width: var(--max-w); margin: 0 auto; padding: 0 1.75rem; }
- 
+
   section.block{ padding: 5rem 0; border-top: 1px solid var(--line); }
- 
+
   .kicker{
     font-family:'JetBrains Mono', monospace; font-size: 0.8rem;
     color: var(--text-muted); margin-bottom: 0.6rem; display:block;
   }
- 
+
   h2.title{ font-size: clamp(1.6rem, 3vw, 2.1rem); margin-bottom: 2.2rem; }
- 
+
   /* ---------- Sobre ---------- */
   .about-text p{ max-width: 62ch; color: var(--text); margin-bottom: 1.1rem; font-size: 1.03rem; }
   .about-text p:last-child{ margin-bottom:0; }
- 
+
   /* ---------- Experiência (timeline) ---------- */
   .timeline{ position: relative; padding-left: 2rem; }
   .timeline::before{
@@ -177,7 +177,7 @@
   .tl-item h3{ font-size: 1.15rem; margin-bottom: 0.15rem; }
   .tl-item .meta{ font-family:'JetBrains Mono', monospace; font-size: 0.82rem; color: var(--primary); margin-bottom: 0.6rem; display:block; }
   .tl-item p{ color: var(--text-muted); max-width: 60ch; }
- 
+
   /* ---------- Projetos ---------- */
   .proj-grid{ display:grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
   .proj-card{
@@ -187,7 +187,7 @@
   .proj-card h3{ font-size: 1.05rem; }
   .proj-card p{ color: var(--text-muted); font-size: 0.95rem; }
   .proj-card .stack{ font-family:'JetBrains Mono', monospace; font-size:0.75rem; color: var(--secondary); margin-top:auto; padding-top:0.5rem; }
- 
+
   /* ---------- Habilidades ---------- */
   .skills-cols{ display:grid; grid-template-columns: 1.3fr 1fr; gap: 2.5rem; }
   .tag-container{ display:flex; flex-wrap:wrap; gap:0.6rem; }
@@ -204,14 +204,14 @@
   .lang-row .name{ display:flex; justify-content:space-between; font-size:0.92rem; margin-bottom:0.35rem; }
   .lang-row .bar{ height:6px; border-radius: 4px; background: var(--line); overflow:hidden; }
   .lang-row .bar > span{ display:block; height:100%; background: linear-gradient(90deg, var(--primary), var(--secondary)); }
- 
+
   /* ---------- Hobbies ---------- */
   .hobby-grid{ display:grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
   .hobby-card{ padding: 1.4rem 0; border-bottom: 1px solid var(--line); }
   .hobby-card:nth-child(odd){ padding-right: 1.5rem; }
   .hobby-card h3{ font-size: 1.02rem; margin-bottom: 0.4rem; color: var(--secondary); }
   .hobby-card p{ color: var(--text-muted); font-size: 0.93rem; }
- 
+
   /* ---------- Contato / rodapé ---------- */
   footer.block{ padding-bottom: 4rem; }
   .contact-grid{ display:flex; flex-wrap:wrap; gap: 0.9rem; margin-top: 1.6rem; }
@@ -224,7 +224,7 @@
   }
   .contact-grid a:hover{ border-color: var(--primary); transform: translateY(-2px); }
   .foot-note{ margin-top: 3rem; color: var(--text-muted); font-size: 0.85rem; }
- 
+
   @media (max-width: 720px){
     .proj-grid, .hobby-grid, .skills-cols{ grid-template-columns: 1fr; }
     .hobby-card:nth-child(odd){ padding-right:0; }
@@ -234,14 +234,14 @@
 </style>
 </head>
 <body>
- 
+
 <div class="util-bar">
   <div class="lang-toggle" role="group" aria-label="Idioma / Language">
     <button type="button" data-lang="pt" class="active">PT</button>
     <button type="button" data-lang="en">EN</button>
   </div>
 </div>
- 
+
 <header class="hero">
   <svg class="circuit-svg" viewBox="0 0 1000 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
     <path d="M -20 480 H 160 V 380 H 420" fill="none" stroke-width="1.5"/>
@@ -261,21 +261,22 @@
     <circle class="node" cx="860" cy="520" r="5"/>
     <circle class="node" cx="480" cy="470" r="5"/>
   </svg>
- 
+
   <div class="hero-inner">
     <span class="eyebrow-tag" data-i18n="hero.eyebrow">disponível para projetos freelance</span>
     <h1 data-i18n="hero.title">Engenharia que <span class="accent">automatiza</span>, código que resolve.</h1>
     <p class="role" data-i18n="hero.subtitle">Pedro Henrique Moreira Silva — estudante de Engenharia de Controle e Automação na FURG, treinador de IA e desenvolvedor de automações sob medida.</p>
     <div class="hero-actions">
       <a class="btn btn-primary" href="#contato" data-i18n="hero.cta1">Vamos conversar</a>
-      <a class="btn btn-ghost" href="Pedro_Henrique_Curriculo.pdf" download data-i18n="hero.cta2">Baixar currículo (PDF)</a>
+      <a class="btn btn-ghost" href="Pedro_Henrique_Curriculo.pdf" download data-i18n="hero.cta2">Baixar currículo (PT)</a>
+      <a class="btn btn-ghost" href="Pedro_Henrique_Resume.pdf" download data-i18n="hero.cta3">Baixar currículo (EN)</a>
     </div>
   </div>
 </header>
- 
+
 <main>
   <div class="wrap">
- 
+
     <section class="block" id="sobre">
       <span class="kicker" data-i18n="about.kicker">// sobre</span>
       <h2 class="title" data-i18n="about.title">Sobre mim</h2>
@@ -284,7 +285,7 @@
         <p data-i18n="about.p2">Quando não estou programando automações ou trabalhando com inteligência artificial, dedico tempo ao que também importa: viajar, cultivar um relacionamento à distância com minha namorada — que está se preparando para cursar medicina no Pará — e aproveitar momentos com a família.</p>
       </div>
     </section>
- 
+
     <section class="block" id="experiencia">
       <span class="kicker" data-i18n="exp.kicker">// experiência</span>
       <h2 class="title" data-i18n="exp.title">Experiência profissional</h2>
@@ -301,7 +302,7 @@
         </div>
       </div>
     </section>
- 
+
     <section class="block" id="projetos">
       <span class="kicker" data-i18n="proj.kicker">// projetos</span>
       <h2 class="title" data-i18n="proj.title">Projetos em destaque</h2>
@@ -328,7 +329,7 @@
         </div>
       </div>
     </section>
- 
+
     <section class="block" id="habilidades">
       <span class="kicker" data-i18n="skills.kicker">// habilidades</span>
       <h2 class="title" data-i18n="skills.title">Habilidades técnicas</h2>
@@ -356,7 +357,7 @@
         </div>
       </div>
     </section>
- 
+
     <section class="block" id="hobbies">
       <span class="kicker" data-i18n="hob.kicker">// vida pessoal</span>
       <h2 class="title" data-i18n="hob.title">Hobbies</h2>
@@ -379,9 +380,9 @@
         </div>
       </div>
     </section>
- 
+
   </div>
- 
+
   <footer class="block" id="contato">
     <div class="wrap">
       <span class="kicker" data-i18n="contact.kicker">// contato</span>
@@ -397,7 +398,7 @@
     </div>
   </footer>
 </main>
- 
+
 <script>
 (function(){
   const dict = {
@@ -405,7 +406,8 @@
     "hero.title": "Engineering that <span class=\"accent\">automates</span>, code that solves.",
     "hero.subtitle": "Pedro Henrique Moreira Silva — Control and Automation Engineering student at FURG, AI trainer, and developer of custom automations.",
     "hero.cta1": "Let's talk",
-    "hero.cta2": "Download résumé (PDF)",
+    "hero.cta2": "Download résumé (PT)",
+    "hero.cta3": "Download résumé (EN)",
     "about.kicker": "// about",
     "about.title": "About me",
     "about.p1": "I was born inland in Pará and now live in Rio Grande (RS), where I study Control and Automation Engineering at FURG. I'm a versatile professional who enjoys moving between the logical reasoning of engineering, software development, and creative solutions for everyday problems.",
@@ -451,12 +453,12 @@
     "contact.text": "Open to freelance projects, internships, and collaborations in automation, AI, and web development. Pick whichever channel works for you:",
     "contact.footer": "© 2026 Pedro Henrique Moreira Silva. Made with code and a bit of coffee."
   };
- 
+
   const originals = new Map();
   document.querySelectorAll('[data-i18n]').forEach(function(el){
     originals.set(el, el.innerHTML);
   });
- 
+
   function setLang(lang){
     document.documentElement.lang = (lang === 'en') ? 'en' : 'pt-BR';
     document.querySelectorAll('[data-i18n]').forEach(function(el){
@@ -471,13 +473,12 @@
       btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
     });
   }
- 
+
   document.querySelectorAll('.lang-toggle button').forEach(function(btn){
     btn.addEventListener('click', function(){ setLang(btn.getAttribute('data-lang')); });
   });
 })();
 </script>
- 
+
 </body>
 </html>
- 
