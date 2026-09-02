@@ -1,259 +1,483 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pedro Henrique Moreira Silva - Portfólio</title>
-    <style>
-        :root {
-            --bg-color: #121212;
-            --surface-color: #1e1e1e;
-            --primary-color: #bb86fc;
-            --secondary-color: #03dac6;
-            --text-color: #e0e0e0;
-            --text-muted: #a0a0a0;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* Animações Keyframes */
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        /* Cabeçalho Animado */
-        header {
-            text-align: center;
-            padding: 5rem 2rem;
-            background: linear-gradient(-45deg, #1e1e1e, #2d1b4e, #1a2a42, #1e1e1e);
-            background-size: 400% 400%;
-            animation: gradientShift 15s ease infinite;
-            border-bottom: 3px solid var(--primary-color);
-        }
-
-        header h1 {
-            font-size: 2.8rem;
-            margin-bottom: 0.5rem;
-            color: #ffffff;
-            animation: fadeInDown 1s ease-out;
-        }
-
-        header p {
-            color: #d1c4e9;
-            font-size: 1.2rem;
-            animation: fadeInDown 1.2s ease-out;
-        }
-
-        .contact-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-            animation: fadeInDown 1.4s ease-out;
-        }
-
-        .contact-links a {
-            padding: 0.5rem 1.5rem;
-            border: 1px solid var(--primary-color);
-            border-radius: 25px;
-            color: var(--primary-color);
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .contact-links a:hover {
-            background-color: var(--primary-color);
-            color: #121212;
-            transform: translateY(-3px);
-            box-shadow: 0 4px 10px rgba(187, 134, 252, 0.4);
-        }
-
-        /* Conteúdo Principal */
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 3rem 2rem;
-        }
-
-        section {
-            margin-bottom: 3rem;
-            background: var(--surface-color);
-            padding: 2.5rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-            animation: fadeInUp 1s ease-out both;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        section:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.6);
-        }
-
-        /* Atrasos nas animações de entrada das sessões */
-        section:nth-child(1) { animation-delay: 0.2s; }
-        section:nth-child(2) { animation-delay: 0.4s; }
-        section:nth-child(3) { animation-delay: 0.6s; }
-        section:nth-child(4) { animation-delay: 0.8s; }
-        section:nth-child(5) { animation-delay: 1.0s; }
-
-        h2 {
-            color: var(--secondary-color);
-            margin-bottom: 1.5rem;
-            border-bottom: 1px solid #333;
-            padding-bottom: 0.5rem;
-            font-size: 1.8rem;
-        }
-
-        .grid-2 {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-        }
-
-        ul {
-            list-style-position: inside;
-            color: var(--text-color);
-        }
-
-        li {
-            margin-bottom: 0.8rem;
-        }
-
-        /* Tags Animadas */
-        .tag-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.8rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .tag {
-            background: #2c2c2c;
-            padding: 0.4rem 1rem;
-            border-radius: 20px;
-            font-size: 0.95rem;
-            border: 1px solid transparent;
-            transition: all 0.3s ease;
-            cursor: default;
-        }
-
-        .tag:hover {
-            border-color: var(--secondary-color);
-            color: var(--secondary-color);
-            transform: scale(1.05);
-            background: #1e1e1e;
-        }
-
-        @media (max-width: 600px) {
-            .grid-2 {
-                grid-template-columns: 1fr;
-            }
-            header h1 {
-                font-size: 2rem;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pedro Henrique Moreira Silva — Engenharia, Automação & Código</title>
+<meta name="description" content="Pedro Henrique Moreira Silva. Estudante de Engenharia de Controle e Automação na FURG, freelancer em IA e desenvolvimento de automações.">
+<meta property="og:title" content="Pedro Henrique Moreira Silva">
+<meta property="og:description" content="Engenharia de Controle e Automação, treinamento de IA e desenvolvimento de automações.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #101014;
+    --bg-raise: #17171d;
+    --surface: #1c1c23;
+    --line: #2a2a33;
+    --primary: #bb86fc;
+    --primary-dim: #8b64c4;
+    --secondary: #03dac6;
+    --text: #e7e5ec;
+    --text-muted: #93919e;
+    --amber: #f0a35c;
+    --radius: 14px;
+    --max-w: 920px;
+  }
+ 
+  * { margin:0; padding:0; box-sizing:border-box; }
+ 
+  html { scroll-behavior: smooth; }
+ 
+  body{
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', -apple-system, sans-serif;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+ 
+  h1,h2,h3{ font-family:'Space Grotesk', sans-serif; color:#fff; letter-spacing: -0.01em; }
+ 
+  a { color: inherit; }
+ 
+  ::selection{ background: var(--primary); color:#101014; }
+ 
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+  }
+ 
+  /* ---------- Barra de utilidades ---------- */
+  .util-bar{
+    position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+    display:flex; justify-content: flex-end; align-items:center;
+    padding: 1rem 1.5rem;
+    pointer-events: none;
+  }
+  .lang-toggle{
+    pointer-events: all;
+    display:flex; gap:2px; background: rgba(23,23,29,0.85); backdrop-filter: blur(8px);
+    border:1px solid var(--line); border-radius: 999px; padding: 4px;
+  }
+  .lang-toggle button{
+    border:none; background:transparent; color: var(--text-muted);
+    font-family:'Inter',sans-serif; font-size:0.82rem; font-weight:600;
+    padding: 0.4rem 0.85rem; border-radius:999px; cursor:pointer;
+    transition: background 0.25s ease, color 0.25s ease;
+  }
+  .lang-toggle button.active{ background: var(--primary); color:#101014; }
+  .lang-toggle button:focus-visible, a:focus-visible, .btn:focus-visible{
+    outline: 2px solid var(--secondary); outline-offset: 2px;
+  }
+ 
+  /* ---------- Hero ---------- */
+  .hero{
+    position: relative;
+    min-height: 92vh;
+    display:flex; flex-direction:column; justify-content:center;
+    padding: 6rem 1.75rem 4rem;
+    overflow:hidden;
+    background:
+      radial-gradient(circle at 15% 20%, rgba(187,134,252,0.10), transparent 45%),
+      radial-gradient(circle at 85% 75%, rgba(3,218,198,0.08), transparent 45%),
+      var(--bg);
+  }
+ 
+  .circuit-svg{
+    position:absolute; inset:0; width:100%; height:100%;
+    opacity: 0.55;
+    stroke: var(--line);
+  }
+  .circuit-svg .pulse{
+    stroke: var(--primary);
+    stroke-dasharray: 6 480;
+    stroke-dashoffset: 0;
+    opacity: 0.9;
+    animation: travel 7s linear infinite;
+  }
+  .circuit-svg .pulse.p2{ stroke: var(--secondary); animation-duration: 9s; animation-delay: 1.2s; }
+  .circuit-svg .pulse.p3{ stroke: var(--amber); animation-duration: 11s; animation-delay: 2.5s; }
+  @keyframes travel{
+    from{ stroke-dashoffset: 480; }
+    to{ stroke-dashoffset: -480; }
+  }
+  .circuit-svg .node{ fill: var(--bg); stroke: var(--line); stroke-width: 2; }
+ 
+  .hero-inner{ position:relative; z-index:2; max-width: var(--max-w); margin: 0 auto; width:100%; }
+ 
+  .eyebrow-tag{
+    display:inline-flex; align-items:center; gap:0.5rem;
+    font-family:'JetBrains Mono', monospace; font-size:0.78rem; color: var(--secondary);
+    border:1px solid rgba(3,218,198,0.35); border-radius:999px;
+    padding: 0.3rem 0.85rem; margin-bottom: 1.75rem;
+  }
+  .eyebrow-tag::before{ content:''; width:6px; height:6px; border-radius:50%; background: var(--secondary); box-shadow: 0 0 8px var(--secondary); }
+ 
+  .hero h1{
+    font-size: clamp(2.4rem, 6vw, 4.2rem);
+    font-weight: 700; line-height: 1.05;
+    margin-bottom: 1.1rem;
+    max-width: 14ch;
+  }
+  .hero h1 .accent{ color: var(--primary); }
+ 
+  .hero .role{
+    font-size: clamp(1.05rem, 2vw, 1.35rem);
+    color: var(--text-muted);
+    max-width: 46ch;
+    margin-bottom: 2.2rem;
+  }
+ 
+  .hero-actions{ display:flex; flex-wrap:wrap; gap: 0.9rem; }
+ 
+  .btn{
+    display:inline-flex; align-items:center; gap:0.5rem;
+    padding: 0.85rem 1.5rem; border-radius: 10px;
+    font-weight: 600; font-size: 0.95rem;
+    text-decoration:none; border:1px solid transparent;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    cursor:pointer;
+  }
+  .btn-primary{ background: var(--primary); color:#101014; }
+  .btn-primary:hover{ transform: translateY(-2px); box-shadow: 0 10px 24px rgba(187,134,252,0.28); }
+  .btn-ghost{ border-color: var(--line); color: var(--text); background: rgba(255,255,255,0.02); }
+  .btn-ghost:hover{ border-color: var(--secondary); color: var(--secondary); transform: translateY(-2px); }
+ 
+  /* ---------- Layout geral ---------- */
+  .wrap{ max-width: var(--max-w); margin: 0 auto; padding: 0 1.75rem; }
+ 
+  section.block{ padding: 5rem 0; border-top: 1px solid var(--line); }
+ 
+  .kicker{
+    font-family:'JetBrains Mono', monospace; font-size: 0.8rem;
+    color: var(--text-muted); margin-bottom: 0.6rem; display:block;
+  }
+ 
+  h2.title{ font-size: clamp(1.6rem, 3vw, 2.1rem); margin-bottom: 2.2rem; }
+ 
+  /* ---------- Sobre ---------- */
+  .about-text p{ max-width: 62ch; color: var(--text); margin-bottom: 1.1rem; font-size: 1.03rem; }
+  .about-text p:last-child{ margin-bottom:0; }
+ 
+  /* ---------- Experiência (timeline) ---------- */
+  .timeline{ position: relative; padding-left: 2rem; }
+  .timeline::before{
+    content:''; position:absolute; left: 5px; top: 6px; bottom: 6px; width:2px;
+    background: linear-gradient(var(--primary), var(--secondary));
+    opacity: 0.4;
+  }
+  .tl-item{ position: relative; margin-bottom: 2.4rem; }
+  .tl-item:last-child{ margin-bottom:0; }
+  .tl-item::before{
+    content:''; position:absolute; left: -2rem; top: 6px;
+    width: 12px; height:12px; border-radius:50%;
+    background: var(--bg); border: 2px solid var(--secondary);
+  }
+  .tl-item h3{ font-size: 1.15rem; margin-bottom: 0.15rem; }
+  .tl-item .meta{ font-family:'JetBrains Mono', monospace; font-size: 0.82rem; color: var(--primary); margin-bottom: 0.6rem; display:block; }
+  .tl-item p{ color: var(--text-muted); max-width: 60ch; }
+ 
+  /* ---------- Projetos ---------- */
+  .proj-grid{ display:grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+  .proj-card{
+    background: var(--surface); border:1px solid var(--line); border-radius: var(--radius);
+    padding: 1.6rem; display:flex; flex-direction:column; gap:0.6rem;
+  }
+  .proj-card h3{ font-size: 1.05rem; }
+  .proj-card p{ color: var(--text-muted); font-size: 0.95rem; }
+  .proj-card .stack{ font-family:'JetBrains Mono', monospace; font-size:0.75rem; color: var(--secondary); margin-top:auto; padding-top:0.5rem; }
+ 
+  /* ---------- Habilidades ---------- */
+  .skills-cols{ display:grid; grid-template-columns: 1.3fr 1fr; gap: 2.5rem; }
+  .tag-container{ display:flex; flex-wrap:wrap; gap:0.6rem; }
+  .tag{
+    background: var(--surface); border:1px solid var(--line);
+    padding: 0.45rem 1rem; border-radius: 8px; font-size: 0.9rem;
+    transition: border-color 0.25s ease, color 0.25s ease;
+  }
+  .tag:hover{ border-color: var(--secondary); color: var(--secondary); }
+  .lang-box{ background: var(--surface); border:1px solid var(--line); border-radius: var(--radius); padding: 1.4rem; }
+  .lang-box h3{ font-size: 1rem; margin-bottom: 0.9rem; }
+  .lang-row{ margin-bottom: 0.9rem; }
+  .lang-row:last-child{ margin-bottom:0; }
+  .lang-row .name{ display:flex; justify-content:space-between; font-size:0.92rem; margin-bottom:0.35rem; }
+  .lang-row .bar{ height:6px; border-radius: 4px; background: var(--line); overflow:hidden; }
+  .lang-row .bar > span{ display:block; height:100%; background: linear-gradient(90deg, var(--primary), var(--secondary)); }
+ 
+  /* ---------- Hobbies ---------- */
+  .hobby-grid{ display:grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+  .hobby-card{ padding: 1.4rem 0; border-bottom: 1px solid var(--line); }
+  .hobby-card:nth-child(odd){ padding-right: 1.5rem; }
+  .hobby-card h3{ font-size: 1.02rem; margin-bottom: 0.4rem; color: var(--secondary); }
+  .hobby-card p{ color: var(--text-muted); font-size: 0.93rem; }
+ 
+  /* ---------- Contato / rodapé ---------- */
+  footer.block{ padding-bottom: 4rem; }
+  .contact-grid{ display:flex; flex-wrap:wrap; gap: 0.9rem; margin-top: 1.6rem; }
+  .contact-grid a{
+    display:flex; align-items:center; gap:0.6rem;
+    padding: 0.85rem 1.3rem; border-radius: 10px;
+    border:1px solid var(--line); background: var(--surface);
+    text-decoration:none; font-size:0.95rem; font-weight:500;
+    transition: border-color 0.25s ease, transform 0.2s ease;
+  }
+  .contact-grid a:hover{ border-color: var(--primary); transform: translateY(-2px); }
+  .foot-note{ margin-top: 3rem; color: var(--text-muted); font-size: 0.85rem; }
+ 
+  @media (max-width: 720px){
+    .proj-grid, .hobby-grid, .skills-cols{ grid-template-columns: 1fr; }
+    .hobby-card:nth-child(odd){ padding-right:0; }
+    section.block{ padding: 3.5rem 0; }
+    .hero{ padding-top: 5.5rem; }
+  }
+</style>
 </head>
 <body>
-
-    <header>
-        <h1>Pedro Henrique Moreira Silva</h1>
-        <p>Engenharia de Controle e Automação | Freelancer & Desenvolvedor</p>
-        <div class="contact-links">
-            <a href="mailto:henriquemoreirasilva2015@gmail.com">Email</a>
-            <a href="https://www.linkedin.com/in/pedro-henrique-moreira-silva-562a8a39a" target="_blank">LinkedIn</a>
-            <a href="https://wa.me/5594991278122" target="_blank">WhatsApp</a>
-        </div>
-    </header>
-
-    <div class="container">
-        
-        <section id="sobre">
-            <h2>Sobre Mim</h2>
-            <p>Olá! Sou o Pedro. Nasci no interior do Pará e atualmente moro em Rio Grande (RS), onde curso Engenharia de Controle e Automação na FURG. Sou um profissional versátil que adora transitar entre o raciocínio lógico da engenharia, o desenvolvimento de software e soluções criativas para problemas do dia a dia.</p>
-            <br>
-            <p>Quando não estou programando automações ou trabalhando com inteligência artificial, estou valorizando minha vida pessoal: adoro viajar, mantenho um relacionamento à distância com minha namorada que está se preparando para cursar medicina no Pará, e sempre busco momentos de qualidade com minha família.</p>
-        </section>
-
-        <section id="experiencia">
-            <h2>Experiência Profissional</h2>
-            <div class="grid-2">
-                <div>
-                    <h3 style="color: var(--primary-color);">Outlier</h3>
-                    <p style="color: var(--text-muted);">Agosto 2026 - Presente</p>
-                    <p><strong>Freelancer / Treinador de IA (Aether Generalist)</strong></p>
-                    <p>Treinamento e avaliação de modelos de IA, atuando na categorização de dados, análise de imagens e verificação rigorosa de qualidade (S2S Quality Screener).</p>
-                </div>
-                <div>
-                    <h3 style="color: var(--primary-color);">BRISA</h3>
-                    <p style="color: var(--text-muted);">Maio 2025 - Presente</p>
-                    <p><strong>Estagiário de TI</strong></p>
-                    <p>Suporte técnico de sistemas, gerenciamento de e-mail e atendimento virtual aos alunos. Auxílio em reuniões e desenvolvimento de rotinas tecnológicas para otimização da equipe.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="projetos">
-            <h2>Projetos em Destaque</h2>
-            <ul>
-                <li><strong>Automação de WhatsApp "Lara":</strong> Assistente virtual de atendimento desenvolvido utilizando Node.js, aliado a scripts em Python (PyAutoGUI e Pyperclip) para envios programados de mensagens.</li>
-                <li><strong>Web Kanban Pessoal:</strong> Aplicação web interativa para organização de tarefas (drag-and-drop, dark mode e calendário), estruturada com HTML, CSS e JavaScript.</li>
-                <li><strong>Simulações na Engenharia:</strong> Programação de estações de triagem em Ladder (FluidSIM) e simulação de circuitos lógicos com Logisim e NGspice.</li>
-                <li><strong>Robótica (FURGBOT):</strong> Bolsista de ensino focado na participação da FURG em competições de robótica pelo Centro de Ciências Computacionais.</li>
-            </ul>
-        </section>
-
-        <section id="habilidades">
-            <h2>Habilidades Técnicas</h2>
-            <div class="tag-container">
-                <span class="tag">Python</span>
-                <span class="tag">JavaScript</span>
-                <span class="tag">C / C++</span>
-                <span class="tag">HTML & CSS</span>
-                <span class="tag">Node.js</span>
-                <span class="tag">Photoshop CC</span>
-                <span class="tag">CorelDRAW</span>
-                <span class="tag">Microsoft Office (Excel/Word)</span>
-            </div>
-            <p><strong>Idiomas:</strong> Português (Nativo) | Inglês (Leitura avançada, excelente escrita e conversação técnica fluida, aprimorada de forma autodidata e com nativos norte-americanos).</p>
-        </section>
-
-        <section id="hobbies">
-            <h2>Hobbies e Vida Pessoal</h2>
-            <ul>
-                <li><strong>Vôlei:</strong> É um esporte que amo muito e que me ensinou sobre resiliência e esforço. Jogo na posição de central e já participei e venci diversos torneios, desde as competições escolares no ensino médio até torneios internacionais recentes no Uruguai.</li>
-                <li><strong>Speedcubing (Cubo Mágico):</strong> Praticante ativo na casa dos 20 segundos. Minha média de resoluções varia entre 20 e 30 segundos (média de 24s), dominando algoritmos avançados.</li>
-                <li><strong>Entretenimento e Leitura:</strong> Assisto desde animes menos conhecidos até obras como <em>Hell's Paradise</em> e <em>One Piece</em>. Em relação a filmes e séries, sou fã de mistério, sci-fi e comédia (como <em>O Mentalista</em> e <em>As Crônicas de Nárnia</em>). Também cultivo o hábito da leitura.</li>
-                <li><strong>Games:</strong> Gosto de jogar desde os clássicos 2D da minha infância (como Mario) até jogos FPS (tiro em primeira pessoa) e jogos variados de celular.</li>
-            </ul>
-        </section>
-
+ 
+<div class="util-bar">
+  <div class="lang-toggle" role="group" aria-label="Idioma / Language">
+    <button type="button" data-lang="pt" class="active">PT</button>
+    <button type="button" data-lang="en">EN</button>
+  </div>
+</div>
+ 
+<header class="hero">
+  <svg class="circuit-svg" viewBox="0 0 1000 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <path d="M -20 480 H 160 V 380 H 420" fill="none" stroke-width="1.5"/>
+    <path d="M 60 120 V 260 H 300 V 200 H 520 V 340 H 760" fill="none" stroke-width="1.5"/>
+    <path d="M 1020 90 H 780 V 190 H 600" fill="none" stroke-width="1.5"/>
+    <path d="M 1020 520 H 860 V 420 H 640 V 470 H 480" fill="none" stroke-width="1.5"/>
+    <path class="pulse p1" d="M -20 480 H 160 V 380 H 420" fill="none" stroke-width="2"/>
+    <path class="pulse p2" d="M 60 120 V 260 H 300 V 200 H 520 V 340 H 760" fill="none" stroke-width="2"/>
+    <path class="pulse p3" d="M 1020 520 H 860 V 420 H 640 V 470 H 480" fill="none" stroke-width="2"/>
+    <circle class="node" cx="160" cy="480" r="5"/>
+    <circle class="node" cx="420" cy="380" r="5"/>
+    <circle class="node" cx="300" cy="260" r="5"/>
+    <circle class="node" cx="520" cy="200" r="5"/>
+    <circle class="node" cx="760" cy="340" r="5"/>
+    <circle class="node" cx="780" cy="90" r="5"/>
+    <circle class="node" cx="600" cy="190" r="5"/>
+    <circle class="node" cx="860" cy="520" r="5"/>
+    <circle class="node" cx="480" cy="470" r="5"/>
+  </svg>
+ 
+  <div class="hero-inner">
+    <span class="eyebrow-tag" data-i18n="hero.eyebrow">disponível para projetos freelance</span>
+    <h1 data-i18n="hero.title">Engenharia que <span class="accent">automatiza</span>, código que resolve.</h1>
+    <p class="role" data-i18n="hero.subtitle">Pedro Henrique Moreira Silva — estudante de Engenharia de Controle e Automação na FURG, treinador de IA e desenvolvedor de automações sob medida.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#contato" data-i18n="hero.cta1">Vamos conversar</a>
+      <a class="btn btn-ghost" href="Pedro_Henrique_Curriculo.pdf" download data-i18n="hero.cta2">Baixar currículo (PDF)</a>
     </div>
+  </div>
+</header>
+ 
+<main>
+  <div class="wrap">
+ 
+    <section class="block" id="sobre">
+      <span class="kicker" data-i18n="about.kicker">// sobre</span>
+      <h2 class="title" data-i18n="about.title">Sobre mim</h2>
+      <div class="about-text">
+        <p data-i18n="about.p1">Nasci no interior do Pará e hoje moro em Rio Grande (RS), onde curso Engenharia de Controle e Automação na FURG. Sou um profissional versátil que gosta de transitar entre o raciocínio lógico da engenharia, o desenvolvimento de software e soluções criativas para problemas do dia a dia.</p>
+        <p data-i18n="about.p2">Quando não estou programando automações ou trabalhando com inteligência artificial, dedico tempo ao que também importa: viajar, cultivar um relacionamento à distância com minha namorada — que está se preparando para cursar medicina no Pará — e aproveitar momentos com a família.</p>
+      </div>
+    </section>
+ 
+    <section class="block" id="experiencia">
+      <span class="kicker" data-i18n="exp.kicker">// experiência</span>
+      <h2 class="title" data-i18n="exp.title">Experiência profissional</h2>
+      <div class="timeline">
+        <div class="tl-item">
+          <h3 data-i18n="exp.outlier.role">Freelancer / Treinador de IA — Aether Generalist</h3>
+          <span class="meta">Outlier · <span data-i18n="exp.outlier.date">Agosto 2026 — Presente</span></span>
+          <p data-i18n="exp.outlier.desc">Treinamento e avaliação de modelos de IA: categorização de dados, análise de imagens e verificação de qualidade (Aether S2S Quality Screener). Qualificado nas categorias Generalist, Python e Portuguese (pt-BR).</p>
+        </div>
+        <div class="tl-item">
+          <h3 data-i18n="exp.brisa.role">Estagiário de TI</h3>
+          <span class="meta">BRISA — Sociedade para o Desenvolvimento da TI · <span data-i18n="exp.brisa.date">Maio 2025 — Presente</span></span>
+          <p data-i18n="exp.brisa.desc">Suporte técnico de sistemas, gerenciamento de e-mail e atendimento a alunos. Participação em reuniões e desenvolvimento de rotinas tecnológicas para otimizar o trabalho da equipe.</p>
+        </div>
+      </div>
+    </section>
+ 
+    <section class="block" id="projetos">
+      <span class="kicker" data-i18n="proj.kicker">// projetos</span>
+      <h2 class="title" data-i18n="proj.title">Projetos em destaque</h2>
+      <div class="proj-grid">
+        <div class="proj-card">
+          <h3 data-i18n="proj.lara.title">Automação de WhatsApp "Lara"</h3>
+          <p data-i18n="proj.lara.desc">Assistente virtual de atendimento com envios programados de mensagens, combinando um backend em Node.js com scripts de automação em Python.</p>
+          <span class="stack">Node.js · Python · PyAutoGUI · Pyperclip</span>
+        </div>
+        <div class="proj-card">
+          <h3 data-i18n="proj.kanban.title">Kanban pessoal na web</h3>
+          <p data-i18n="proj.kanban.desc">Aplicação interativa para organização de tarefas, com drag-and-drop, modo escuro e calendário integrado.</p>
+          <span class="stack">HTML · CSS · JavaScript</span>
+        </div>
+        <div class="proj-card">
+          <h3 data-i18n="proj.sim.title">Simulações de engenharia</h3>
+          <p data-i18n="proj.sim.desc">Programação de estações de triagem em Ladder e simulação de circuitos lógicos para disciplinas de automação e eletrônica.</p>
+          <span class="stack">FluidSIM · Logisim · NGspice</span>
+        </div>
+        <div class="proj-card">
+          <h3 data-i18n="proj.furgbot.title">Robótica — FURGBOT</h3>
+          <p data-i18n="proj.furgbot.desc">Bolsista de ensino no projeto FURGBOT, apoiando a participação da FURG em competições de robótica pelo Centro de Ciências Computacionais.</p>
+          <span class="stack">C / C++ · Robótica</span>
+        </div>
+      </div>
+    </section>
+ 
+    <section class="block" id="habilidades">
+      <span class="kicker" data-i18n="skills.kicker">// habilidades</span>
+      <h2 class="title" data-i18n="skills.title">Habilidades técnicas</h2>
+      <div class="skills-cols">
+        <div class="tag-container">
+          <span class="tag">Python</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">C / C++</span>
+          <span class="tag">HTML &amp; CSS</span>
+          <span class="tag">Node.js</span>
+          <span class="tag">Photoshop CC</span>
+          <span class="tag">CorelDRAW</span>
+          <span class="tag" data-i18n="skills.office">Microsoft Office (Excel/Word)</span>
+        </div>
+        <div class="lang-box">
+          <h3 data-i18n="skills.langtitle">Idiomas</h3>
+          <div class="lang-row">
+            <div class="name"><span data-i18n="skills.pt">Português</span><span data-i18n="skills.native">Nativo</span></div>
+            <div class="bar"><span style="width:100%;"></span></div>
+          </div>
+          <div class="lang-row">
+            <div class="name"><span data-i18n="skills.en">Inglês</span><span data-i18n="skills.enlevel">Avançado</span></div>
+            <div class="bar"><span style="width:85%;"></span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+ 
+    <section class="block" id="hobbies">
+      <span class="kicker" data-i18n="hob.kicker">// vida pessoal</span>
+      <h2 class="title" data-i18n="hob.title">Hobbies</h2>
+      <div class="hobby-grid">
+        <div class="hobby-card">
+          <h3 data-i18n="hob.volei.title">Vôlei</h3>
+          <p data-i18n="hob.volei.desc">Jogo na posição de central. Um esporte que me ensinou sobre resiliência e esforço — já venci torneios desde o ensino médio até competições internacionais no Uruguai.</p>
+        </div>
+        <div class="hobby-card">
+          <h3 data-i18n="hob.cube.title">Speedcubing</h3>
+          <p data-i18n="hob.cube.desc">Praticante ativo, com média de resolução entre 20 e 30 segundos (cerca de 24s), dominando algoritmos avançados.</p>
+        </div>
+        <div class="hobby-card">
+          <h3 data-i18n="hob.watch.title">Entretenimento &amp; leitura</h3>
+          <p data-i18n="hob.watch.desc">Animes como Hell's Paradise e One Piece, séries e filmes de mistério, sci-fi e comédia (O Mentalista, As Crônicas de Nárnia) e o hábito constante da leitura.</p>
+        </div>
+        <div class="hobby-card">
+          <h3 data-i18n="hob.games.title">Games</h3>
+          <p data-i18n="hob.games.desc">Dos clássicos 2D da infância (como Mario) até jogos de tiro em primeira pessoa e títulos variados de celular.</p>
+        </div>
+      </div>
+    </section>
+ 
+  </div>
+ 
+  <footer class="block" id="contato">
+    <div class="wrap">
+      <span class="kicker" data-i18n="contact.kicker">// contato</span>
+      <h2 class="title" data-i18n="contact.title">Vamos construir algo juntos</h2>
+      <p class="about-text" data-i18n="contact.text" style="max-width:56ch; color:var(--text-muted);">Aberto a projetos freelance, estágios e colaborações em automação, IA e desenvolvimento web. Escolha o canal que preferir:</p>
+      <div class="contact-grid">
+        <a href="mailto:henriquemoreirasilva2015@gmail.com">✉️ <span>Email</span></a>
+        <a href="https://wa.me/5594991278122" target="_blank" rel="noopener">💬 <span>WhatsApp</span></a>
+        <a href="https://www.linkedin.com/in/pedro-henrique-moreira-silva-562a8a39a" target="_blank" rel="noopener">💼 <span>LinkedIn</span></a>
+        <a href="https://github.com/Arashi0108" target="_blank" rel="noopener">🖥️ <span>GitHub</span></a>
+      </div>
+      <p class="foot-note" data-i18n="contact.footer">© 2026 Pedro Henrique Moreira Silva. Feito com código e um pouco de café.</p>
+    </div>
+  </footer>
+</main>
+ 
+<script>
+(function(){
+  const dict = {
+    "hero.eyebrow": "available for freelance projects",
+    "hero.title": "Engineering that <span class=\"accent\">automates</span>, code that solves.",
+    "hero.subtitle": "Pedro Henrique Moreira Silva — Control and Automation Engineering student at FURG, AI trainer, and developer of custom automations.",
+    "hero.cta1": "Let's talk",
+    "hero.cta2": "Download résumé (PDF)",
+    "about.kicker": "// about",
+    "about.title": "About me",
+    "about.p1": "I was born inland in Pará and now live in Rio Grande (RS), where I study Control and Automation Engineering at FURG. I'm a versatile professional who enjoys moving between the logical reasoning of engineering, software development, and creative solutions for everyday problems.",
+    "about.p2": "When I'm not coding automations or working with artificial intelligence, I make time for what matters just as much: traveling, keeping up a long-distance relationship with my girlfriend — who is preparing to study medicine in Pará — and enjoying time with family.",
+    "exp.kicker": "// experience",
+    "exp.title": "Professional experience",
+    "exp.outlier.role": "Freelancer / AI Trainer — Aether Generalist",
+    "exp.outlier.date": "August 2026 — Present",
+    "exp.outlier.desc": "Training and evaluating AI models: data categorization, image analysis, and quality verification (Aether S2S Quality Screener). Qualified in the Generalist, Python, and Portuguese (pt-BR) categories.",
+    "exp.brisa.role": "IT Intern",
+    "exp.brisa.date": "May 2025 — Present",
+    "exp.brisa.desc": "Technical system support, email management, and student assistance. Participation in meetings and development of technology routines to streamline the team's work.",
+    "proj.kicker": "// projects",
+    "proj.title": "Featured projects",
+    "proj.lara.title": "\"Lara\" WhatsApp automation",
+    "proj.lara.desc": "A virtual assistant for customer service with scheduled messaging, combining a Node.js backend with Python automation scripts.",
+    "proj.kanban.title": "Personal web Kanban",
+    "proj.kanban.desc": "An interactive task-organization app with drag-and-drop, dark mode, and an integrated calendar.",
+    "proj.sim.title": "Engineering simulations",
+    "proj.sim.desc": "Ladder programming for sorting stations and logic-circuit simulation for automation and electronics coursework.",
+    "proj.furgbot.title": "Robotics — FURGBOT",
+    "proj.furgbot.desc": "Teaching scholarship on the FURGBOT project, supporting FURG's participation in robotics competitions through the Center for Computer Sciences.",
+    "skills.kicker": "// skills",
+    "skills.title": "Technical skills",
+    "skills.office": "Microsoft Office (Excel/Word)",
+    "skills.langtitle": "Languages",
+    "skills.pt": "Portuguese",
+    "skills.native": "Native",
+    "skills.en": "English",
+    "skills.enlevel": "Advanced",
+    "hob.kicker": "// personal life",
+    "hob.title": "Hobbies",
+    "hob.volei.title": "Volleyball",
+    "hob.volei.desc": "I play as a middle blocker. A sport that taught me resilience and effort — I've won tournaments from high school all the way to international competitions in Uruguay.",
+    "hob.cube.title": "Speedcubing",
+    "hob.cube.desc": "Active practitioner, averaging between 20 and 30 seconds (around 24s), with advanced algorithms.",
+    "hob.watch.title": "Entertainment & reading",
+    "hob.watch.desc": "Anime like Hell's Paradise and One Piece, mystery, sci-fi, and comedy shows and movies (The Mentalist, The Chronicles of Narnia), and a steady reading habit.",
+    "hob.games.title": "Games",
+    "hob.games.desc": "From childhood 2D classics (like Mario) to first-person shooters and a variety of mobile games.",
+    "contact.kicker": "// contact",
+    "contact.title": "Let's build something together",
+    "contact.text": "Open to freelance projects, internships, and collaborations in automation, AI, and web development. Pick whichever channel works for you:",
+    "contact.footer": "© 2026 Pedro Henrique Moreira Silva. Made with code and a bit of coffee."
+  };
+ 
+  const originals = new Map();
+  document.querySelectorAll('[data-i18n]').forEach(function(el){
+    originals.set(el, el.innerHTML);
+  });
+ 
+  function setLang(lang){
+    document.documentElement.lang = (lang === 'en') ? 'en' : 'pt-BR';
+    document.querySelectorAll('[data-i18n]').forEach(function(el){
+      const key = el.getAttribute('data-i18n');
+      if(lang === 'en' && dict[key]){
+        el.innerHTML = dict[key];
+      } else {
+        el.innerHTML = originals.get(el);
+      }
+    });
+    document.querySelectorAll('.lang-toggle button').forEach(function(btn){
+      btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+    });
+  }
+ 
+  document.querySelectorAll('.lang-toggle button').forEach(function(btn){
+    btn.addEventListener('click', function(){ setLang(btn.getAttribute('data-lang')); });
+  });
+})();
+</script>
+ 
 </body>
 </html>
+ 
