@@ -9,6 +9,7 @@
             --bg-color: #121212;
             --surface-color: #1e1e1e;
             --primary-color: #bb86fc;
+            --secondary-color: #03dac6;
             --text-color: #e0e0e0;
             --text-muted: #a0a0a0;
         }
@@ -18,57 +19,121 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
         }
 
         body {
             background-color: var(--bg-color);
             color: var(--text-color);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
+        /* Animações Keyframes */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Cabeçalho Animado */
         header {
             text-align: center;
-            padding: 4rem 2rem;
-            background-color: var(--surface-color);
-            border-bottom: 2px solid var(--primary-color);
+            padding: 5rem 2rem;
+            background: linear-gradient(-45deg, #1e1e1e, #2d1b4e, #1a2a42, #1e1e1e);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            border-bottom: 3px solid var(--primary-color);
         }
 
         header h1 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             margin-bottom: 0.5rem;
             color: #ffffff;
+            animation: fadeInDown 1s ease-out;
         }
 
         header p {
-            color: var(--text-muted);
-            font-size: 1.1rem;
+            color: #d1c4e9;
+            font-size: 1.2rem;
+            animation: fadeInDown 1.2s ease-out;
         }
 
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+            animation: fadeInDown 1.4s ease-out;
+        }
+
+        .contact-links a {
+            padding: 0.5rem 1.5rem;
+            border: 1px solid var(--primary-color);
+            border-radius: 25px;
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .contact-links a:hover {
+            background-color: var(--primary-color);
+            color: #121212;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 10px rgba(187, 134, 252, 0.4);
+        }
+
+        /* Conteúdo Principal */
         .container {
             max-width: 900px;
             margin: 0 auto;
-            padding: 2rem;
+            padding: 3rem 2rem;
         }
 
         section {
             margin-bottom: 3rem;
             background: var(--surface-color);
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            animation: fadeInUp 1s ease-out both;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.6);
         }
 
+        /* Atrasos nas animações de entrada das sessões */
+        section:nth-child(1) { animation-delay: 0.2s; }
+        section:nth-child(2) { animation-delay: 0.4s; }
+        section:nth-child(3) { animation-delay: 0.6s; }
+        section:nth-child(4) { animation-delay: 0.8s; }
+        section:nth-child(5) { animation-delay: 1.0s; }
+
         h2 {
-            color: var(--primary-color);
+            color: var(--secondary-color);
             margin-bottom: 1.5rem;
             border-bottom: 1px solid #333;
             padding-bottom: 0.5rem;
+            font-size: 1.8rem;
         }
 
         .grid-2 {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
+            gap: 2rem;
         }
 
         ul {
@@ -77,39 +142,40 @@
         }
 
         li {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.8rem;
         }
 
-        a {
-            color: var(--primary-color);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        a:hover {
-            color: #ffffff;
-        }
-
-        .contact-links {
+        /* Tags Animadas */
+        .tag-container {
             display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-top: 1.5rem;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-bottom: 1.5rem;
         }
 
         .tag {
-            display: inline-block;
-            background: #333;
-            padding: 0.2rem 0.6rem;
-            border-radius: 4px;
-            font-size: 0.9rem;
-            margin-right: 0.5rem;
-            margin-bottom: 0.5rem;
+            background: #2c2c2c;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            border: 1px solid transparent;
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+
+        .tag:hover {
+            border-color: var(--secondary-color);
+            color: var(--secondary-color);
+            transform: scale(1.05);
+            background: #1e1e1e;
         }
 
         @media (max-width: 600px) {
             .grid-2 {
                 grid-template-columns: 1fr;
+            }
+            header h1 {
+                font-size: 2rem;
             }
         }
     </style>
@@ -139,13 +205,13 @@
             <h2>Experiência Profissional</h2>
             <div class="grid-2">
                 <div>
-                    <h3>Outlier</h3>
+                    <h3 style="color: var(--primary-color);">Outlier</h3>
                     <p style="color: var(--text-muted);">Agosto 2026 - Presente</p>
                     <p><strong>Freelancer / Treinador de IA (Aether Generalist)</strong></p>
                     <p>Treinamento e avaliação de modelos de IA, atuando na categorização de dados, análise de imagens e verificação rigorosa de qualidade (S2S Quality Screener).</p>
                 </div>
                 <div>
-                    <h3>BRISA</h3>
+                    <h3 style="color: var(--primary-color);">BRISA</h3>
                     <p style="color: var(--text-muted);">Maio 2025 - Presente</p>
                     <p><strong>Estagiário de TI</strong></p>
                     <p>Suporte técnico de sistemas, gerenciamento de e-mail e atendimento virtual aos alunos. Auxílio em reuniões e desenvolvimento de rotinas tecnológicas para otimização da equipe.</p>
@@ -159,19 +225,18 @@
                 <li><strong>Automação de WhatsApp "Lara":</strong> Assistente virtual de atendimento desenvolvido utilizando Node.js, aliado a scripts em Python (PyAutoGUI e Pyperclip) para envios programados de mensagens.</li>
                 <li><strong>Web Kanban Pessoal:</strong> Aplicação web interativa para organização de tarefas (drag-and-drop, dark mode e calendário), estruturada com HTML, CSS e JavaScript.</li>
                 <li><strong>Simulações na Engenharia:</strong> Programação de estações de triagem em Ladder (FluidSIM) e simulação de circuitos lógicos com Logisim e NGspice.</li>
+                <li><strong>Robótica (FURGBOT):</strong> Bolsista de ensino focado na participação da FURG em competições de robótica pelo Centro de Ciências Computacionais.</li>
             </ul>
         </section>
 
         <section id="habilidades">
             <h2>Habilidades Técnicas</h2>
-            <div style="margin-bottom: 1rem;">
+            <div class="tag-container">
                 <span class="tag">Python</span>
                 <span class="tag">JavaScript</span>
                 <span class="tag">C / C++</span>
                 <span class="tag">HTML & CSS</span>
                 <span class="tag">Node.js</span>
-            </div>
-            <div style="margin-bottom: 1rem;">
                 <span class="tag">Photoshop CC</span>
                 <span class="tag">CorelDRAW</span>
                 <span class="tag">Microsoft Office (Excel/Word)</span>
@@ -182,9 +247,10 @@
         <section id="hobbies">
             <h2>Hobbies e Vida Pessoal</h2>
             <ul>
-                <li><strong>Voleibol:</strong> Jogo na posição de central e participo ativamente de competições regionais, como torneios recentes na cidade do Chuí.</li>
-                <li><strong>Speedcubing:</strong> Sou praticante da modalidade com cubos magnéticos inteligentes, dominando algoritmos avançados para resolver o cubo mágico em tempos na casa dos sub-10 segundos.</li>
-                <li><strong>Cultura Pop e Games:</strong> Nas horas vagas, acompanho animes como <em>My Hero Academia</em> e jogo títulos variados, desde Pokémon TCG e Clash of Clans até The Binding of Isaac.</li>
+                <li><strong>Vôlei:</strong> É um esporte que amo muito e que me ensinou sobre resiliência e esforço. Jogo na posição de central e já participei e venci diversos torneios, desde as competições escolares no ensino médio até torneios internacionais recentes no Uruguai.</li>
+                <li><strong>Speedcubing (Cubo Mágico):</strong> Praticante ativo na casa dos 20 segundos. Minha média de resoluções varia entre 20 e 30 segundos (média de 24s), dominando algoritmos avançados.</li>
+                <li><strong>Entretenimento e Leitura:</strong> Assisto desde animes menos conhecidos até obras como <em>Hell's Paradise</em> e <em>One Piece</em>. Em relação a filmes e séries, sou fã de mistério, sci-fi e comédia (como <em>O Mentalista</em> e <em>As Crônicas de Nárnia</em>). Também cultivo o hábito da leitura.</li>
+                <li><strong>Games:</strong> Gosto de jogar desde os clássicos 2D da minha infância (como Mario) até jogos FPS (tiro em primeira pessoa) e jogos variados de celular.</li>
             </ul>
         </section>
 
