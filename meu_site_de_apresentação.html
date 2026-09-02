@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedro Henrique Moreira Silva - Portfólio</title>
+    <style>
+        :root {
+            --bg-color: #121212;
+            --surface-color: #1e1e1e;
+            --primary-color: #bb86fc;
+            --text-color: #e0e0e0;
+            --text-muted: #a0a0a0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            padding: 4rem 2rem;
+            background-color: var(--surface-color);
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: #ffffff;
+        }
+
+        header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        section {
+            margin-bottom: 3rem;
+            background: var(--surface-color);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid #333;
+            padding-bottom: 0.5rem;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        ul {
+            list-style-position: inside;
+            color: var(--text-color);
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #ffffff;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #333;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 600px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Pedro Henrique Moreira Silva</h1>
+        <p>Engenharia de Controle e Automação | Freelancer & Desenvolvedor</p>
+        <div class="contact-links">
+            <a href="mailto:henriquemoreirasilva2015@gmail.com">Email</a>
+            <a href="https://www.linkedin.com/in/pedro-henrique-moreira-silva-562a8a39a" target="_blank">LinkedIn</a>
+            <a href="https://wa.me/5594991278122" target="_blank">WhatsApp</a>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <section id="sobre">
+            <h2>Sobre Mim</h2>
+            <p>Olá! Sou o Pedro. Nasci no interior do Pará e atualmente moro em Rio Grande (RS), onde curso Engenharia de Controle e Automação na FURG. Sou um profissional versátil que adora transitar entre o raciocínio lógico da engenharia, o desenvolvimento de software e soluções criativas para problemas do dia a dia.</p>
+            <br>
+            <p>Quando não estou programando automações ou trabalhando com inteligência artificial, estou valorizando minha vida pessoal: adoro viajar, mantenho um relacionamento à distância com minha namorada que está se preparando para cursar medicina no Pará, e sempre busco momentos de qualidade com minha família.</p>
+        </section>
+
+        <section id="experiencia">
+            <h2>Experiência Profissional</h2>
+            <div class="grid-2">
+                <div>
+                    <h3>Outlier</h3>
+                    <p style="color: var(--text-muted);">Agosto 2026 - Presente</p>
+                    <p><strong>Freelancer / Treinador de IA (Aether Generalist)</strong></p>
+                    <p>Treinamento e avaliação de modelos de IA, atuando na categorização de dados, análise de imagens e verificação rigorosa de qualidade (S2S Quality Screener).</p>
+                </div>
+                <div>
+                    <h3>BRISA</h3>
+                    <p style="color: var(--text-muted);">Maio 2025 - Presente</p>
+                    <p><strong>Estagiário de TI</strong></p>
+                    <p>Suporte técnico de sistemas, gerenciamento de e-mail e atendimento virtual aos alunos. Auxílio em reuniões e desenvolvimento de rotinas tecnológicas para otimização da equipe.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projetos">
+            <h2>Projetos em Destaque</h2>
+            <ul>
+                <li><strong>Automação de WhatsApp "Lara":</strong> Assistente virtual de atendimento desenvolvido utilizando Node.js, aliado a scripts em Python (PyAutoGUI e Pyperclip) para envios programados de mensagens.</li>
+                <li><strong>Web Kanban Pessoal:</strong> Aplicação web interativa para organização de tarefas (drag-and-drop, dark mode e calendário), estruturada com HTML, CSS e JavaScript.</li>
+                <li><strong>Simulações na Engenharia:</strong> Programação de estações de triagem em Ladder (FluidSIM) e simulação de circuitos lógicos com Logisim e NGspice.</li>
+            </ul>
+        </section>
+
+        <section id="habilidades">
+            <h2>Habilidades Técnicas</h2>
+            <div style="margin-bottom: 1rem;">
+                <span class="tag">Python</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">C / C++</span>
+                <span class="tag">HTML & CSS</span>
+                <span class="tag">Node.js</span>
+            </div>
+            <div style="margin-bottom: 1rem;">
+                <span class="tag">Photoshop CC</span>
+                <span class="tag">CorelDRAW</span>
+                <span class="tag">Microsoft Office (Excel/Word)</span>
+            </div>
+            <p><strong>Idiomas:</strong> Português (Nativo) | Inglês (Leitura avançada, excelente escrita e conversação técnica fluida, aprimorada de forma autodidata e com nativos norte-americanos).</p>
+        </section>
+
+        <section id="hobbies">
+            <h2>Hobbies e Vida Pessoal</h2>
+            <ul>
+                <li><strong>Voleibol:</strong> Jogo na posição de central e participo ativamente de competições regionais, como torneios recentes na cidade do Chuí.</li>
+                <li><strong>Speedcubing:</strong> Sou praticante da modalidade com cubos magnéticos inteligentes, dominando algoritmos avançados para resolver o cubo mágico em tempos na casa dos sub-10 segundos.</li>
+                <li><strong>Cultura Pop e Games:</strong> Nas horas vagas, acompanho animes como <em>My Hero Academia</em> e jogo títulos variados, desde Pokémon TCG e Clash of Clans até The Binding of Isaac.</li>
+            </ul>
+        </section>
+
+    </div>
+</body>
+</html>
